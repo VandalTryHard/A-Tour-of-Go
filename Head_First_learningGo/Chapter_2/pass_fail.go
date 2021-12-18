@@ -7,6 +7,8 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"strconv"
+	"strings"
 )
 
 func main() {
@@ -16,11 +18,17 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	if input >= 60 {
-		status := "passing"
-		fmt.Println(status)
-	} else {
-		status := "failing"
-		fmt.Println(status)
+
+	input = strings.TrimSpace(input)
+	grade, err := strconv.ParseFloat(input, 64)
+	var status string
+	if err != nil {
+		log.Fatal(err)
 	}
+	if grade >= 60 {
+		status = "passing"
+	} else {
+		status = "failing"
+	}
+	fmt.Println("A grade of", grade, "is", status)
 }
