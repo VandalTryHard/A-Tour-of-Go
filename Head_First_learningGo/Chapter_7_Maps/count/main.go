@@ -4,6 +4,7 @@ package main
 import (
 	"fmt"
 	"log"
+	"sort"
 
 	"../datafile"
 )
@@ -20,8 +21,14 @@ func main() {
 		counts[line]++
 	}
 
-	for string, i := range counts {
-		fmt.Printf("%s: %v\n", string, i)
+	var names []string
+	for name := range counts {
+		names = append(names, name)
+	}
+	sort.Strings(names)
+
+	for _, name := range names {
+		fmt.Printf("Votes for %s: %v\n", name, counts[name])
 	}
 
 	// с использованием 2х переменных
