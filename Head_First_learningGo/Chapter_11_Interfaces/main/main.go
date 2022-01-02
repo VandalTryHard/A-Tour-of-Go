@@ -4,7 +4,7 @@ import (
 	"fmt"
 
 	"../gadget"
-	// "../mypkg"
+	"../mypkg"
 )
 
 type Player interface {
@@ -40,10 +40,10 @@ func main() {
 	TryOut(gadget.TapeRecorder{})
 	TryOut(gadget.TapePlayer{})
 
-	//test mypkg с интерфейсом
-	// var value mypkg.MyInterface
-	// value := mypkg.MyType(5)
-	// value.MethodWithoutParameters()
-	// value.MethodWithParameter(127.3)
-	// fmt.Println(value.MethodWithReturnValue())
+	// test mypkg с интерфейсом
+	var value mypkg.MyInterface
+	value = mypkg.MyType(5)
+	value.MethodWithoutParameters()
+	value.MethodWithParameter(127.3)
+	fmt.Println(value.MethodWithReturnValue())
 }
