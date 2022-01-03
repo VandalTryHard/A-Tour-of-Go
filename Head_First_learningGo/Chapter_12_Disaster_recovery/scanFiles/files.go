@@ -1,5 +1,5 @@
 // сканирует ТОЛЬКО папку my_directory
-package main
+package scanFiles
 
 import (
 	"fmt"
@@ -7,8 +7,8 @@ import (
 	"log"
 )
 
-func main() {
-	files, err := ioutil.ReadDir("my_directory")
+func Scan(dir1 string) string {
+	files, err := ioutil.ReadDir(dir1)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -20,4 +20,5 @@ func main() {
 			fmt.Println("File:", file.Name())
 		}
 	}
+	return "Scan work"
 }

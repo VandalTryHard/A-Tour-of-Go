@@ -6,11 +6,14 @@ import (
 	"fmt"
 	"io/ioutil"
 	"path/filepath"
+	// "../scanFiles"
 )
 
 func main() {
+	dir := "my_directory"
+	// Scan(dir)
 	defer reportPanik()
-	scanDirectory("my_directory")
+	scanDirectory(dir)
 }
 
 func scanDirectory(path string) {
